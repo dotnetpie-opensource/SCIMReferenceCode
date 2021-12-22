@@ -1,0 +1,19 @@
+OutputDir:=nugets
+
+GeneratedPackages = $(wildcard $(OutputDir)/*.nupkg)
+PackageBaseNames:=$(basename $(GeneratedPackages))
+PackagePubNames:=$(addsuffix .pub,$(PackageBaseNames))
+
+%.pub:
+	@echo "-----------------------------------------"
+	dotnet nuget push "$(addsuffix .nupkg,$(basename $@))" --source "dotnetpieidentity" --skip-duplicate    
+	@echo "*************Deployed successfully******************"
+
+deploy: $(PackagePubNames)
+	@echo "Start to publish to github nuget packages"
+	@echo "Repo: https://github.com/dotnetpie-opensource/identity-and-access-control"
+	@echo "Nuget source: https://nuget.pkg.github.com/dotnetpie/index.json"
+
+.PHONY: deploy
+
+
