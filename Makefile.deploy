@@ -6,13 +6,11 @@ PackagePubNames:=$(addsuffix .pub,$(PackageBaseNames))
 
 %.pub:
 	@echo "-----------------------------------------"
-	dotnet nuget push "$(addsuffix .nupkg,$(basename $@))" --source "dotnetpieidentity" --skip-duplicate    
+	dotnet nuget push "$(addsuffix .nupkg,$(basename $@))" --source "$(NugetSource)" --skip-duplicate    
 	@echo "*************Deployed successfully******************"
 
 deploy: $(PackagePubNames)
-	@echo "Start to publish to github nuget packages"
-	@echo "Repo: https://github.com/dotnetpie-opensource/identity-and-access-control"
-	@echo "Nuget source: https://nuget.pkg.github.com/dotnetpie/index.json"
+	@echo "Start to publish"
 
 .PHONY: deploy
 
