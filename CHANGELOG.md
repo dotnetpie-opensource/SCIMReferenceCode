@@ -1,3 +1,16 @@
+## 2.0.0 (October 12, 2022)
+  - Upgrade to net6.0
+  - Merge
+  - Fix typo in protocol extension (#77)
+  - Fix Missing Metadata update on InMemoryGroupProvider.cs (#82)
+  - Using PredicateBuilder class for querying Users and Groups (#74)
+  - Update README.md
+  - Update README.md
+  - Bump Microsoft.AspNetCore.Authentication.JwtBearer (#64)
+  - Tools
+  - Created a new solution to house select projects
+  - Adding support for inbound provisioning (#68)
+
 ## 1.0.0 (December 20, 2021)
 
 
