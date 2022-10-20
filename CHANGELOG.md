@@ -1,3 +1,9 @@
+## 2.0.1 (October 20, 2022)
+  - Update the access modifier
+  - Fix the version for SCIM
+  - Update package
+  - Bump version
+
 ## 2.0.0 (October 12, 2022)
   - Upgrade to net6.0
   - Merge
